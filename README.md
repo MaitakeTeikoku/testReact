@@ -50,22 +50,32 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Memo
 1. GitHubからクローン。
-```bash
-git clone https://github.com/MaitakeTeikoku/testReact.git
-```
+    ```bash
+    git clone https://github.com/MaitakeTeikoku/testReact.git
+    ```
+    * あるいはプロジェクトを作成するディレクトリで以下を実行。
+        ```bash
+        git init
+        git remote add origin https://github.com/MaitakeTeikoku/testReact.git
+        ```
 1. Reactのプロジェクトを作成。
-```bash
-npx create-react-app test-react --template typescript
-```
+    ```bash
+    npx create-react-app test-react --template typescript
+    ```
 1. Reactのファイルをルートに移動。
 1. Reactのpackage.jsonの2行目に以下を追記。
-```json
-"homepage": "https://MaitakeTeikoku.github.io/testReact",
-```
+    ```json
+    "homepage": "https://MaitakeTeikoku.github.io/testReact",
+    ```
 1. .github/workflowsにYAMLファイルを作成。
 1. コミットしてプッシュ。
-```bash
-git add .
-git commit -m "commit"
-npm run deploy
-```
+    ```bash
+    git add .
+    git commit -m "commit"
+    git push
+    ```
+    * エラーが起きるときは以下を実行してみる。
+        ```bash
+        git config http.postBuffer 524288000
+        git config --global http.version HTTP/1.1
+        ```
