@@ -1,3 +1,46 @@
+# testReact
+## Todo
+1. GitHubからクローン。
+    ```bash
+    git clone https://github.com/MaitakeTeikoku/testReact.git
+    ```
+    * あるいはプロジェクトを作成するディレクトリで以下を実行。
+        ```bash
+        git init
+        git remote add origin https://github.com/MaitakeTeikoku/testReact.git
+        ```
+1. Reactのプロジェクトを作成。
+    ```bash
+    npx create-react-app test-react --template typescript
+    ```
+1. Reactのファイルをルートに移動。
+1. Reactのpackage.jsonの2行目に以下を追記。
+    ```json
+    "homepage": "https://MaitakeTeikoku.github.io/testReact",
+    ```
+1. .github/workflowsにYAMLファイルを作成。以下の箇所はリポジトリ名に変更。
+    ```yaml
+    jobs:
+      build:
+        steps:
+          name: Build
+            env:
+              PUBLIC_URL: /testReact
+    ```
+1. コミットしてプッシュ。
+    ```bash
+    git add .
+    git commit -m "commit"
+    git push
+    ```
+    * エラーが起きるときは以下を実行してみる。
+        ```bash
+        git config http.postBuffer 524288000
+        git config --global http.version HTTP/1.1
+        ```
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,38 +87,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-
-
-## Memo
-1. GitHubからクローン。
-    ```bash
-    git clone https://github.com/MaitakeTeikoku/testReact.git
-    ```
-    * あるいはプロジェクトを作成するディレクトリで以下を実行。
-        ```bash
-        git init
-        git remote add origin https://github.com/MaitakeTeikoku/testReact.git
-        ```
-1. Reactのプロジェクトを作成。
-    ```bash
-    npx create-react-app test-react --template typescript
-    ```
-1. Reactのファイルをルートに移動。
-1. Reactのpackage.jsonの2行目に以下を追記。
-    ```json
-    "homepage": "https://MaitakeTeikoku.github.io/testReact",
-    ```
-1. .github/workflowsにYAMLファイルを作成。
-1. コミットしてプッシュ。
-    ```bash
-    git add .
-    git commit -m "commit"
-    git push
-    ```
-    * エラーが起きるときは以下を実行してみる。
-        ```bash
-        git config http.postBuffer 524288000
-        git config --global http.version HTTP/1.1
-        ```
